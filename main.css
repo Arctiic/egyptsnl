@@ -1,0 +1,69 @@
+body {
+  background-color: #FFFFFF;
+  color: #FFFFFF;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+.img {
+  position: relative;
+  text-align: center;
+  margin: auto;
+  top: Calc(50% - (275px / 2));
+  left: Calc(50% - (200px / 2));
+  width: 150px;
+  height: 180px;
+}
+
+.img1 {
+  position: relative;
+  text-align: center;
+  margin: auto;
+  top: Calc(50% - (275px / 2));
+  left: Calc(50% - (200px / 2));
+  width: 150px;
+  height: 180px;
+}
+
+.card {
+  width: 200px;
+  height: 275px;
+  position: absolute;
+  text-align: center;
+  margin: auto;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #666666;
+  border-radius: 10px;
+}
+
+.title {
+  position: relative;
+  top: -13px;
+  left: 5px;
+}
+
+.reveal {
+  width: 275px;
+  height: 200px;
+  position: absolute;
+  margin: auto;
+  top: 100%;
+  left: Calc(50% - (275px / 2));
+  border-style: solid;
+  border-width: 2px;
+  border-color: #666666;
+  border-radius: 10px;
+}
+
+.chance {
+  background-color: #FFA500;
+  top: Calc(50% - (275px / 2));
+  left: Calc(25% - (200px / 2));
+}
+
+.move {
+  background-color: #3232FF;
+  top: Calc(50% - (275px / 2));
+  left: Calc(75% - (200px / 2));
+}
