@@ -12,7 +12,7 @@ class RNG {
         arr.push('' + current[0]);
       }
     }
-    retrun arr[n];
+    return arr[n];
   }
   
   rng (min, max) {
