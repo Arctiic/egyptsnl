@@ -1,22 +1,20 @@
 let chStyles = __OPTIONS.cards.chances;
+let quStyles = __OPTIONS.cards.questions;
 let mvStyles = __OPTIONS.cards.moves;
 
 let card = false;
 
-let chance; 
+let chance;
+let question;
 let move;
 
-// Card Draw
-draw = (chance) => {
-  if (chance) {
-    return eval(chStyles[rng(0, chStyles.length - 1)].replace('{', '${rng(').replace('}', ')}'));
-  }
-  return eval(mvStyles[rng(0, mvStyles.length - 1)].replace('{', '${rng(').replace('}', ')}'));
-}
+let rng = new RNG();
 
-// Random Number Generator
-rng = (min, max) => {
-  return Math.floor((Math.random() * max) + min);
+// Card Draw
+draw = (n) => {
+  if (n == 0) return eval(chStyles[rng.rng(0, chStyles.length - 1)].replace('{', '${rng(').replace('}', ')}'));
+  if (n == 1) return eval(quStyles[rng.rng(0, quStyles.length - 1)].replace('{', '${rng(').replace('}', ')}'));
+  if (n == 2) return eval(mvStyles[rng.rng(0, mvStyles.length - 1)].replace('{', '${rng(').replace('}', ')}')); 
 }
 
 chanceGen = () => {
@@ -36,8 +34,32 @@ chanceGen = () => {
   });
 }
 
-crClick = () => {
+chClick = () => {
 	chance.reveal.animate({
+		top: "100%"
+	});
+	card = false;
+}
+
+questionGen = () => {
+  if (card) return;
+  card = true;
+
+  question.card.animate({
+    top: "100%"
+  }, 1000, () => {
+    question.card.css("top", "Calc(50% - (275px / 2))");
+    question.action.html(draw(true));
+    question.reveal.animate({
+      top: "30%"
+    }, 1500, () => {
+      question.reveal.click(crClick);
+    });
+  });
+}
+
+quClick = () => {
+	question.reveal.animate({
 		top: "100%"
 	});
 	card = false;
@@ -93,7 +115,7 @@ $(document).keydown((e) => {
 			case 13:
 			case 27:
 			case 32:
-				crClick();
+				chClick();
 				mvClick();
 				break;
 			case 67:
