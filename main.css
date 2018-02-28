@@ -62,6 +62,13 @@ body {
   left: Calc(25% - (200px / 2));
 }
 
+
+.question {
+  background-color: #a7db26;
+  top: Calc(50% - (275px / 2));
+  left: Calc(50% - (200px / 2));
+}
+
 .move {
   background-color: #3232FF;
   top: Calc(50% - (275px / 2));
