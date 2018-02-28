@@ -7,6 +7,10 @@ const __OPTIONS = {
       "`Move {1, 8} squares backward then {1, 8} squares forward`",
       "`Don't move.`"
     ],
+    
+    question : [
+      "`This is a question`"
+    ],
 
     moves : [
       "`Go to square {1, 36} of the current board`",
