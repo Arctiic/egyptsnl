@@ -25,7 +25,7 @@ chanceGen = () => {
     top: "100%"
   }, 1000, () => {
     chance.card.css("top", "Calc(50% - (275px / 2))");
-    chance.action.html(draw(true));
+    chance.action.html(draw(0));
     chance.reveal.animate({
       top: "30%"
     }, 1500, () => {
@@ -49,7 +49,7 @@ questionGen = () => {
     top: "100%"
   }, 1000, () => {
     question.card.css("top", "Calc(50% - (275px / 2))");
-    question.action.html(draw(true));
+    question.action.html(draw(1));
     question.reveal.animate({
       top: "30%"
     }, 1500, () => {
@@ -73,7 +73,7 @@ moveGen = () => {
     top: "100%"
   }, 1000, () => {
     move.card.css("top", "Calc(50% - (275px / 2))");
-    move.action.html(draw(false));
+    move.action.html(draw(2));
     move.reveal.animate({
       top: "30%"
     }, 1500, () => {
@@ -105,6 +105,12 @@ $(document).ready(() => {
 	  action: $('#mv-action')
 	};
 	
+	question = {
+		card: $('#question'),
+		reveal: $('#qu-reveal'),
+		action: $('#qu-action')
+	}
+	
 	// Set click options
 	chance.card.click(chanceGen);
 	move.card.click(moveGen);
@@ -117,12 +123,16 @@ $(document).keydown((e) => {
 			case 32:
 				chClick();
 				mvClick();
+				quClick();
 				break;
 			case 67:
 				chanceGen();
 				break;
 			case 77:
 				moveGen();
+				break;
+			case 81:
+				questionGen();
 				break;
 		}
 });
