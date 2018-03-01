@@ -113,6 +113,7 @@ $(document).ready(() => {
 	
 	// Set click options
 	chance.card.click(chanceGen);
+	question.card.click(questionGen);
 	move.card.click(moveGen);
 });
 
