@@ -12,9 +12,9 @@ let rng = new RNG();
 
 // Card Draw
 draw = (n) => {
-  if (n == 0) return eval(chStyles[rng.rng(0, chStyles.length - 1)].replace('{', '${rng(').replace('}', ')}'));
-  if (n == 1) return eval(quStyles[rng.rng(0, quStyles.length - 1)].replace('{', '${rng(').replace('}', ')}'));
-  if (n == 2) return eval(mvStyles[rng.rng(0, mvStyles.length - 1)].replace('{', '${rng(').replace('}', ')}')); 
+  if (n == 0) return eval(chStyles[rng.rng(0, chStyles.length - 1)].replace('{', '${rng.rng(').replace('}', ')}'));
+  if (n == 1) return eval(quStyles[rng.rng(0, quStyles.length - 1)].replace('{', '${rng.rng(').replace('}', ')}'));
+  if (n == 2) return eval(mvStyles[rng.rng(0, mvStyles.length - 1)].replace('{', '${rng.rng(').replace('}', ')}')); 
 }
 
 chanceGen = () => {
