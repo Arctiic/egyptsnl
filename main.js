@@ -29,7 +29,7 @@ chanceGen = () => {
     chance.reveal.animate({
       top: "30%"
     }, 1500, () => {
-      chance.reveal.click(crClick);
+      chance.reveal.click(chClick);
     });
   });
 }
@@ -53,7 +53,7 @@ questionGen = () => {
     question.reveal.animate({
       top: "30%"
     }, 1500, () => {
-      question.reveal.click(crClick);
+      question.reveal.click(quClick);
     });
   });
 }
