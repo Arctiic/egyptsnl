@@ -1,5 +1,5 @@
 const __OPTIONS = {
-  cards : [
+  cards : {
     chances : [
       { item : "`Move {1, 8} squares forward`", chance : 30 },
       { item : "`Move {1, 6} squares backward`", chance : 30 },
@@ -19,5 +19,5 @@ const __OPTIONS = {
       { item : "`Move forward {1, 8} squares`", chance : 35 },
       { item : "`Choose any player to go to square {1, 36} of either their board or your board`", chance : 15 }
     ]
-  ]
+  }
 }
