@@ -1,6 +1,6 @@
-let chStyles = __OPTIONS.cards.chances;
-let quStyles = __OPTIONS.cards.questions;
-let mvStyles = __OPTIONS.cards.moves;
+let cs = __OPTIONS.cards.chances;
+let qs = __OPTIONS.cards.questions;
+let ms = __OPTIONS.cards.moves;
 
 let card = false;
 
@@ -12,9 +12,21 @@ let rng = new RNG();
 
 // Card Draw
 draw = (n) => {
-  if (n == 0) return eval(chStyles[rng.rng(0, chStyles.length - 1)].replace('{', '${rng.rng(').replace('}', ')}'));
-  if (n == 1) return eval(quStyles[rng.rng(0, quStyles.length - 1)].replace('{', '${rng.rng(').replace('}', ')}'));
-  if (n == 2) return eval(mvStyles[rng.rng(0, mvStyles.length - 1)].replace('{', '${rng.rng(').replace('}', ')}')); 
+	let a;
+	
+	if (n == 0) a = cs;
+	if (n == 1) a = qs;
+	if (n == 2) a = ms;
+	
+	let options = [];
+  for (let i = 0; i < a.length; i++)
+		options.push([a[i].item, a[i].chance]);
+	
+	let item = rng.percent(options)
+		.replace('{', '${rng.rng(')
+		.replace('}', ')}');
+	
+	return eval(item);
 }
 
 chanceGen = () => {
