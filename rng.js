@@ -3,13 +3,13 @@ class RNG {
     
   }
   
-  percent (...args) {
-    let arr = [];
+  percent (arr) {
+    let opts = [];
     let n = this.rng(0, 99);
-    for (let i = 0; i < args.length; i++) {
-      let current = args[i];
+    for (let i = 0; i < arr.length; i++) {
+      let current = arr[i];
       for (let j = 0; j < current[1]; j++) {
-        arr.push('' + current[0]);
+        opts.push('' + current[0]);
       }
     }
     return arr[n];
