@@ -8,7 +8,7 @@ const __OPTIONS = {
       "`Don't move.`"
     ],
     
-    question : [
+    questions : [
       "`This is a question`"
     ],
 
