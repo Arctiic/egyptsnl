@@ -22,7 +22,7 @@ draw = (n) => {
   for (let i = 0; i < a.length; i++)
 		options.push([a[i].item, a[i].chance]);
 	
-	let item = rng.percent(options)
+	let item = new RNG().percent(options)
 		.replace('{', '${rng.rng(')
 		.replace('}', ')}');
 	
