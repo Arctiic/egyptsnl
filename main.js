@@ -8,7 +8,7 @@ let chance;
 let question;
 let move;
 
-let rng = new RNG();
+let rng;
 
 // Card Draw
 draw = (n) => {
@@ -22,7 +22,7 @@ draw = (n) => {
   for (let i = 0; i < a.length; i++)
 		options.push([a[i].item, a[i].chance]);
 	
-	let item = new RNG().percent(options)
+	let item = rng.percent(options)
 		.replace('{', '${rng.rng(')
 		.replace('}', ')}');
 	
@@ -149,3 +149,7 @@ $(document).keydown((e) => {
 				break;
 		}
 });
+
+load = () => {
+	rng = new RNG();
+}
