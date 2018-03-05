@@ -1,3 +1,10 @@
+{
+	String.prototype.replaceAll = function(search, replacement) {
+		var target = this;
+		return target.replace(new RegExp(search, 'g'), replacement);
+	};
+}
+
 let cs = __OPTIONS.cards.chances;
 let qs = __OPTIONS.cards.questions;
 let ms = __OPTIONS.cards.moves;
@@ -23,8 +30,8 @@ draw = (n) => {
 		options.push([a[i].item, a[i].chance]);
 	
 	let r = rng.percent(options)
-	r = r.replace('{', '${rng.rng(');
-	r = r.replace('}', ')}');
+	r = r.replaceAll('{', '${rng.rng(');
+	r = r.replaceAll('}', ')}');
 	
 	return eval(r);
 }
