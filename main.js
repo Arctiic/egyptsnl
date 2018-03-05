@@ -22,11 +22,11 @@ draw = (n) => {
   for (let i = 0; i < a.length; i++)
 		options.push([a[i].item, a[i].chance]);
 	
-	let item = rng.percent(options)
-		.replace('{', '${rng.rng(')
-		.replace('}', ')}');
+	let r = rng.percent(options)
+	r = r.replace('{', '${rng.rng(');
+	r = r.replace('}', ')}');
 	
-	return eval(item);
+	return eval(r);
 }
 
 chanceGen = () => {
