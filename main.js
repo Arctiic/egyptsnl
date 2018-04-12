@@ -26,14 +26,18 @@ draw = (n) => {
 	if (n == 2) a = ms;
 	
 	let options = [];
-  for (let i = 0; i < a.length; i++)
-		options.push([a[i].item, a[i].chance]);
+  	for (let i = 0; i < a.length; i++)
+		options.push([a[i], a[i].chance]);
 	
-	let r = rng.percent(options);
+	let random = rng.percent(options);
+	let r = random.item;
 	r = r.replaceAll('{', '${rng.rng(');
 	r = r.replaceAll('}', ')}');
 	
 	r = `\`${r}\``;
+	
+	if (n == 1)
+	    return {ret: eval(r), ans: random.answer};
 	
 	return eval(r);
 }
@@ -70,16 +74,34 @@ questionGen = () => {
     top: "100%"
   }, 1000, () => {
     question.card.css("top", "Calc(50% - (275px / 2))");
-    question.action.html(draw(1));
+    let q = draw(1);
+    question.action.html(q.ret);
     question.reveal.animate({
       top: "30%"
     }, 1500, () => {
-      question.reveal.click(quClick);
+      question.reveal.click(() => quClick(q.ans));
     });
   });
 }
 
-quClick = () => {
+async quClick = (ans) => {
+  question.reveal.animate({
+		top: "100%"
+	});
+  
+  await new Promise((resolve, reject) => {
+    question.card.animate({
+      top: "100%"
+    }, 1000, () => {
+      question.card.css("top", "Calc(50% - (275px / 2))");
+      question.action.html(ans);
+      question.reveal.animate({
+        top: "30%"
+    }, 1500, () => {
+      resolve();
+    });
+  }));
+  
 	question.reveal.animate({
 		top: "100%"
 	});
