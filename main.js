@@ -21,13 +21,13 @@ let rng;
 draw = (n) => {
 	let a;
 	
-	if (n == 0) a = cs;
+  if (n == 0) a = cs;
 	if (n == 1) a = qs;
 	if (n == 2) a = ms;
 	
 	let options = [];
   	for (let i = 0; i < a.length; i++)
-		options.push([a[i], a[i].chance]);
+		options.push([a[i].item, a[i].chance]);
 	
 	let r = rng.percent(options);
 	r = r.replaceAll('{', '${rng.rng(');
