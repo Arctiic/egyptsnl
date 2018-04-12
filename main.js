@@ -70,8 +70,7 @@ questionGen = () => {
     top: "100%"
   }, 1000, () => {
     question.card.css("top", "Calc(50% - (275px / 2))");
-    let q = draw(1);
-    question.action.html(q.ret);
+    question.action.html(draw(1));
     question.reveal.animate({
       top: "30%"
     }, 1500, () => {
