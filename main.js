@@ -35,10 +35,7 @@ draw = (n) => {
 	r = r.replaceAll('}', ')}');
 	
 	r = `\`${r}\``;
-	
-	if (n == 1)
-	    return {ret: eval(r), ans: random.answer};
-	
+
 	return eval(r);
 }
 
@@ -79,29 +76,12 @@ questionGen = () => {
     question.reveal.animate({
       top: "30%"
     }, 1500, () => {
-      question.reveal.click(() => quClick(q.ans));
+      question.reveal.click(() => quClick());
     });
   });
 }
 
-quClick = async (ans) => {
-  question.reveal.animate({
-		top: "100%"
-	});
-  
-  await new Promise((resolve, reject) => {
-    question.card.animate({
-      top: "100%"
-    }, 1000, () => {
-      question.card.css("top", "Calc(50% - (275px / 2))");
-      question.action.html(ans);
-      question.reveal.animate({
-        top: "30%"
-    }, 1500, () => {
-      question.reveal.clicl(resolve);
-    });
-  }));
-  
+quClick = () => {
 	question.reveal.animate({
 		top: "100%"
 	});
