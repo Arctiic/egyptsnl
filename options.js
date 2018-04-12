@@ -9,7 +9,7 @@ const __OPTIONS = {
     ],
     
     questions : [
-      { item : "This is a question.", chance : 100 }
+      { item : "This is a question.", answer : "This is the answer.", chance : 100 }
     ],
 
     chances : [
