@@ -84,7 +84,7 @@ questionGen = () => {
   });
 }
 
-async quClick = (ans) => {
+quClick = async (ans) => {
   question.reveal.animate({
 		top: "100%"
 	});
@@ -98,7 +98,7 @@ async quClick = (ans) => {
       question.reveal.animate({
         top: "30%"
     }, 1500, () => {
-      resolve();
+      question.reveal.clicl(resolve);
     });
   }));
   
