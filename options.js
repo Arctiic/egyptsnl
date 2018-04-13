@@ -1,11 +1,11 @@
 const __OPTIONS = {
   cards : {
     moves : [
-      { item : "Move {1, 8} squares forward.", chance : 30 },
-      { item : "Move {1, 6} squares backward.", chance : 30 },
-      { item : "Move {1, 8} squares forward then {1, 8} squares backward.", chance : 15 },
-      { item : "Move {1, 8} squares backward then {1, 8} squares forward.", chance : 15 },
-      { item : "Don't move.", chance : 10 }
+      { item : "Move {1, 8} squares forward.", chance : 40 },
+      { item : "Move {1, 6} squares backward.", chance : 20 },
+      { item : "Move {1, 8} squares forward then {1, 8} squares backward.", chance : 10 },
+      { item : "Move {1, 8} squares backward then {1, 8} squares forward.", chance : 10 },
+      { item : "Don't move.", chance : 20 }
     ],
     
     questions : [
