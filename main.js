@@ -21,15 +21,18 @@ let rng;
 draw = (n) => {
 	let a;
 	
-  if (n == 0) a = cs;
+	if (n == 0) a = cs;
 	if (n == 1) a = qs;
 	if (n == 2) a = ms;
 	
 	let options = [];
   	for (let i = 0; i < a.length; i++)
-		options.push([a[i].item, a[i].chance]);
+		options.push([a[i], a[i].chance]);
 	
-	let r = rng.percent(options);
+	let obj = rng.percent(options);
+	
+	let r = obj.item;
+	(n == 1) ? r = `${r}\n\n${obj.answer}`;
 	r = r.replaceAll('{', '${rng.rng(');
 	r = r.replaceAll('}', ')}');
 	
