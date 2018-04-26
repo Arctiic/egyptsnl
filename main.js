@@ -32,7 +32,7 @@ draw = (n) => {
 	let obj = rng.percent(options);
 	
 	let r = obj.item;
-	(n == 1) ? r = `${r}\n\n${obj.answer}` : '';
+	(n == 1) ? (r = `${r} (A: ${obj.answer})`) : 0;
 	r = r.replaceAll('{', '${rng.rng(');
 	r = r.replaceAll('}', ')}');
 	
