@@ -9,7 +9,7 @@ const __OPTIONS = {
     ],
     
     questions : [
-      { item : "Where is Ancient Egypt?", answer : "North Africa, beside the Nile River"., chance : 10 },
+      { item : "Where is Ancient Egypt?", answer : "North Africa, beside the Nile River.", chance : 10 },
       { item : "Who was the last pharaoh of Ancient Egypt?", answer : "Cleopatra VII.", chance : 10 },
       { item : "Where is Ancient Egypt?", answer : "North Africa, beside the Nile River.", chance : 10 },
       { item : "How did the fall of Ancient Egypt happen?", answer : "The Romans took control over Egypt.", chance : 10 },
