@@ -9,16 +9,16 @@ const __OPTIONS = {
     ],
     
     questions : [
-      { item : "Where is Ancient Egypt?", answer : "North Africa, beside the Nile River.", chance : 10 },
-      { item : "Who was the last pharaoh of Ancient Egypt?", answer : "Cleopatra VII.", chance : 10 },
-      { item : "Where is Ancient Egypt?", answer : "North Africa, beside the Nile River.", chance : 10 },
-      { item : "How did the fall of Ancient Egypt happen?", answer : "The Romans took control over Egypt.", chance : 10 },
-      { item : "Why were pyramids built?", answer : "They were built as tombs for the pharaohs", chance : 10 },
-      { item : "Where is Anvient Egypt?", answer : "North Africa, beside the Nile River", chance : 10 },
-      { item : "Who did the Egyptians worship?", answer : "The Egyptians believed in gods.", chance : 10 },
-      { item : "What does the word: 'hieroglyphs' mean?", answer : "'Sacred writing'.", chance : 10 },
-      { item : "How many pyramids do the Pyramids of Giza consist of?", answer : "Three.", chance : 10 },
-      { item : "How many years did King Tut rule for?", answer : "Ten.", chance : 10 },
+      { item : "Where is Ancient Egypt? (A: ${obj.answer}", answer : "North Africa, beside the Nile River.", chance : 10 },
+      { item : "Who was the last pharaoh of Ancient Egypt? (A: ${obj.answer}", answer : "Cleopatra VII.", chance : 10 },
+      { item : "Where is Ancient Egypt? (A: ${obj.answer}", answer : "North Africa, beside the Nile River.", chance : 10 },
+      { item : "How did the fall of Ancient Egypt happen? (A: ${obj.answer}", answer : "The Romans took control over Egypt.", chance : 10 },
+      { item : "Why were pyramids built? (A: ${obj.answer}", answer : "They were built as tombs for the pharaohs", chance : 10 },
+      { item : "Where is Anvient Egypt? (A: ${obj.answer}", answer : "North Africa, beside the Nile River", chance : 10 },
+      { item : "Who did the Egyptians worship? (A: ${obj.answer}", answer : "The Egyptians believed in gods.", chance : 10 },
+      { item : "What does the word: 'hieroglyphs' mean? (A: ${obj.answer}", answer : "'Sacred writing'.", chance : 10 },
+      { item : "How many pyramids do the Pyramids of Giza consist of? (A: ${obj.answer}", answer : "Three.", chance : 10 },
+      { item : "How many years did King Tut rule for? (A: ${obj.answer}", answer : "Ten.", chance : 10 },
     ],
 
     chances : [
