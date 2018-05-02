@@ -29,10 +29,7 @@ draw = (n) => {
   	for (let i = 0; i < a.length; i++)
 		options.push([a[i], a[i].chance]);
 	
-	let obj = rng.percent(options);
-	
-	let r = obj.item;
-	(n == 1) ? (r = `${r} (A: ${obj.answer})`) : 0;
+	let r = rng.percent(options).item;
 	r = r.replaceAll('{', '${rng.rng(');
 	r = r.replaceAll('}', ')}');
 	
