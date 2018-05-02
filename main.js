@@ -27,9 +27,9 @@ draw = (n) => {
 	
 	let options = [];
   	for (let i = 0; i < a.length; i++)
-		options.push([a[i], a[i].chance]);
+		options.push([a[i].item, a[i].chance]);
 	
-	let r = rng.percent(options).item;
+	let r = rng.percent(options);
 	r = r.replaceAll('{', '${rng.rng(');
 	r = r.replaceAll('}', ')}');
 	
